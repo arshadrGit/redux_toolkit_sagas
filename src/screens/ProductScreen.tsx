@@ -1,11 +1,12 @@
-import React, {useEffect} from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-import {getProductRequest} from '../redux/slices/productSlice';
-import {ProductList} from '../components';
+import React, { useEffect } from "react";
+import { SafeAreaView } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductRequest } from "../redux/slices/productSlice";
+import { FloatButton, ProductList } from "../components";
+import { AppState } from "../models/AppState";
 
 function ProductsScreen(): JSX.Element {
-  const {products} = useSelector(state => state.product);
+  const { products } = useSelector((state: AppState) => state.product);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductRequest());
@@ -14,6 +15,7 @@ function ProductsScreen(): JSX.Element {
   return (
     <SafeAreaView>
       <ProductList products={products} />
+      <FloatButton />
     </SafeAreaView>
   );
 }

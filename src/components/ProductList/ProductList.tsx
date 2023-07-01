@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, ScrollView} from 'react-native';
-import {Product} from '../models/product';
+import { Image, ScrollView, Text, View } from 'react-native';
+import { Product } from '../../models/product';
+import styles from './ProductListStyles';
 
 interface Props {
   products: Product[];
@@ -29,65 +30,3 @@ const ProductList: React.FC<Props> = ({products}) => {
 };
 
 export default ProductList;
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-  },
-  content:{
-    paddingBottom:10
-  },
-  productContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-    paddingVertical: 8,
-  },
-  thumbnail: {
-    width: 100,
-    height: 100,
-    marginRight: 16,
-  },
-  detailsContainer: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 4,
-   
-  },
-  description: {
-    marginBottom: 4,
-    fontSize: 14,
-    flexShrink:1
-  },
-  price: {
-    marginBottom: 4,
-  },
-  discount: {
-    marginBottom: 4,
-  },
-  rating: {
-    marginBottom: 4,
-  },
-  stock: {
-    marginBottom: 4,
-  },
-  brand: {
-    marginBottom: 4,
-  },
-  category: {
-    marginBottom: 4,
-  },
-  imageContainer: {
-    flexDirection: 'row',
-  },
-  image: {
-    width: 50,
-    height: 50,
-    marginRight: 8,
-  },
-});
